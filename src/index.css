@@ -1,0 +1,394 @@
+:root {
+  --primary: #e63946;
+  --primary-dark: #d62828;
+  --secondary: #457b9d;
+  --secondary-dark: #1d3557;
+  --accent: #f4a261;
+  --text: #2b2d42;
+  --text-muted: #6c757d;
+  --bg: #ffffff;
+  --bg-alt: #f8f9fa;
+  --bg-light: #fef9f5;
+  --border: #dee2e6;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column
+}
+
+main {
+  flex: 1
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem
+}
+
+.header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow)
+}
+
+.logo h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.5px
+}
+
+.hero {
+  background: linear-gradient(135deg, #e63946 0%, #d62828 50%, #1d3557 100%);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(244, 162, 97, 0.2) 0%, transparent 50%);
+  pointer-events: none
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -1px
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  cursor: pointer;
+  border: none;
+  text-align: center
+}
+
+.button-primary {
+  background: white;
+  color: var(--primary)
+}
+
+.button-primary:hover {
+  background: var(--bg-alt);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg)
+}
+
+.button-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white
+}
+
+.button-secondary:hover {
+  background: white;
+  color: var(--primary);
+  transform: translateY(-2px)
+}
+
+.button-large {
+  padding: 1.25rem 3rem;
+  font-size: 1.25rem;
+  background: var(--primary);
+  color: white
+}
+
+.button-large:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg)
+}
+
+.features {
+  padding: 5rem 2rem;
+  background: var(--bg-light)
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem
+}
+
+.feature-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border)
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary)
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text)
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.6
+}
+
+.info {
+  padding: 5rem 2rem;
+  background: white
+}
+
+.info-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start
+}
+
+.info-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  line-height: 1.2
+}
+
+.info-text p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem
+}
+
+.info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem
+}
+
+.detail-box {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary)
+}
+
+.detail-box h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text)
+}
+
+.detail-box p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem
+}
+
+.detail-box p:last-child {
+  margin-bottom: 0
+}
+
+.cta {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+  color: white;
+  text-align: center
+}
+
+.cta h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2
+}
+
+.cta p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95
+}
+
+.footer {
+  background: var(--text);
+  color: white;
+  padding: 2rem;
+  text-align: center
+}
+
+.footer p {
+  opacity: 0.8;
+  font-size: 0.875rem
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem
+  }
+  
+  .info-content {
+    grid-template-columns: 1fr;
+    gap: 3rem
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem
+  }
+  
+  .hero {
+    padding: 4rem 1.5rem
+  }
+  
+  .hero-title {
+    font-size: 2.5rem
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch
+  }
+  
+  .button {
+    width: 100%
+  }
+  
+  .features {
+    padding: 3rem 1.5rem
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr
+  }
+  
+  .info {
+    padding: 3rem 1.5rem
+  }
+  
+  .info-text h2 {
+    font-size: 2rem
+  }
+  
+  .cta {
+    padding: 3rem 1.5rem
+  }
+  
+  .cta h2 {
+    font-size: 2rem
+  }
+  
+  .cta p {
+    font-size: 1.125rem
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem
+  }
+  
+  .logo h2 {
+    font-size: 1.5rem
+  }
+  
+  .button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem
+  }
+  
+  .button-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem
+  }
+}
